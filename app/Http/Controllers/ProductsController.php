@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\ProductsResource;
 use App\Models\Products;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -11,10 +12,13 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index():JsonResponse
     {
         $products = Products::all();
-        return ProductsResource::collection($products);
+        return response()->json([
+            'success'=>true,
+            'data'=>ProductsResource::collection($products)
+        ],200);
     }
 
     /**
@@ -28,7 +32,7 @@ class ProductsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $productName = $request->input('name');
         $productPrice = $request->input('price');
@@ -48,9 +52,12 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Products $product)
+    public function show(Products $product): JsonResponse
     {
-        return new ProductsResource($product);
+        return response()->json([
+            'success'=>true,
+            'data'=>new ProductsResource($product)
+        ],200);
     }
 
     /**
@@ -64,7 +71,7 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Products $product)
+    public function update(Request $request, Products $product): JsonResponse
     {
         $productName = $request->input('name');
         $productPrice = $request->input('price');
@@ -84,7 +91,7 @@ class ProductsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Products $product)
+    public function destroy(Products $product): JsonResponse
     {
         $product->delete();
         return response()->json(null, 204);
