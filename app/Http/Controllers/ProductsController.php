@@ -12,13 +12,13 @@ class ProductsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():JsonResponse
+    public function index(): JsonResponse
     {
         $products = Products::all();
         return response()->json([
-            'success'=>true,
-            'data'=>ProductsResource::collection($products)
-        ],200);
+            'success' => true,
+            'data' => ProductsResource::collection($products)
+        ], 200);
     }
 
     /**
@@ -45,7 +45,9 @@ class ProductsController extends Controller
         ]);
 
         return response()->json([
-            'data' => new ProductsResource($product)
+            'success' => true,
+            'data' => new ProductsResource($product),
+            'message' => 'Product Created Successfully.'
         ], 201);
     }
 
@@ -55,9 +57,9 @@ class ProductsController extends Controller
     public function show(Products $product): JsonResponse
     {
         return response()->json([
-            'success'=>true,
-            'data'=>new ProductsResource($product)
-        ],200);
+            'success' => true,
+            'data' => new ProductsResource($product)
+        ], 200);
     }
 
     /**
@@ -84,7 +86,9 @@ class ProductsController extends Controller
         ]);
 
         return response()->json([
-            'data' => new ProductsResource($product)
+            'success' => true,
+            'data' => new ProductsResource($product),
+            'message' => 'Product updated Successfully.'
         ], 200);
     }
 
