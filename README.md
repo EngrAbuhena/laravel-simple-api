@@ -1,6 +1,6 @@
 # Laravel Simple Rest API
 
-<p>This is a Laravel Rest Api products app without Authentication</p>
+<p>This is a Laravel Rest Api products app with CRUD operation but without Authentication</p>
 
 ## Routes
 
