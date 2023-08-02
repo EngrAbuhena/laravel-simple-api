@@ -29,7 +29,8 @@
 ## Delete Single Product (http://127.0.0.1:8000/api/products/23)
 ![deletesingleproductapi](https://github.com/EngrAbuhena/laravel-simple-api/blob/photos/deleteSingleProduct.PNG?raw=true)
 
-
+## 404 Response
+![404singleproductapi](https://github.com/EngrAbuhena/laravel-simple-api/blob/photos/404.PNG?raw=true)
 
 ## Security Vulnerabilities
 
