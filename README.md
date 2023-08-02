@@ -9,6 +9,13 @@
 ## Create Single Product (http://127.0.0.1:8000/api/products/)
 ![createsingleproductapi](https://github.com/EngrAbuhena/laravel-simple-api/blob/photos/createSingleProduct.PNG?raw=true)
 
+## Update Single Product ()
+![updatesingleproductapi](https://github.com/EngrAbuhena/laravel-simple-api/blob/photos/updateSingleProduct.PNG?raw=true)
+
+## Delete Single Product ()
+![deletesingleproductapi](https://github.com/EngrAbuhena/laravel-simple-api/blob/photos/deleteSingleProduct.PNG?raw=true)
+
+
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
